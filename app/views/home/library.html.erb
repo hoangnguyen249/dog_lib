@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Num</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% Breed.all.each do |breed| %>
+  <tr>
+      <th scope="row">1</th>
+      <td><%= breed.name %></td>
+      <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
+      <td><%= breed.owners.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
