@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   def library
   end
   def about
+  end
 
+  def owner
   end
 end
