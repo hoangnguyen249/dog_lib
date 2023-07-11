@@ -13,6 +13,7 @@
       <th scope="row">1</th>
       <td><%= breed.name %></td>
       <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
+      <td><%= breed.owner.first.name%> </td>
     </tr>
   <% end %>
   </tbody>
