@@ -14,7 +14,9 @@
       <th scope="row"><%=i %></th>
       <td><%= breed.name %></td>
       <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
-      <td><%= breed.owners.first.name%> </td>
+      <% if !(breed.owners).nil? %>
+      <td><%= (breed.owners).nil?%></td>
+      <%end%>
       <%i+=1 %>
     </tr>
   <% end %>

@@ -40,10 +40,10 @@ existing_breeds.each do |breed|
 end
 
 # Create 20 fake owners
-20.times do
+100.times do
   name =Faker::Name.name
   owner = Owner.create(name: name)
-  2.times do
+  4.times do
   breed = existing_breeds.sample
   owner.breeds << breed unless owner.breeds.include?(breed)
   end
