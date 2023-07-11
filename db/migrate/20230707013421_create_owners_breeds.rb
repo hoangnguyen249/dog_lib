@@ -1,6 +1,6 @@
-class CreateOwnersBreeds < ActiveRecord::Migration[7.0]
+class CreateBreedsOwner < ActiveRecord::Migration[7.0]
   def change
-    create_table :owners_breeds, id: false do |t|
+    create_table :breeds_owners, id: false do |t|
       t.belongs_to :owner
       t.belongs_to :breed
     end

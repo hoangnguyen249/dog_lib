@@ -43,8 +43,10 @@ end
 20.times do
   name =Faker::Name.name
   owner = Owner.create(name: name)
+  2.times do
   breed = existing_breeds.sample
   owner.breeds << breed unless owner.breeds.include?(breed)
+  end
 end
 
 
