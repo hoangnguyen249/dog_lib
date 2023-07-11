@@ -8,12 +8,14 @@
     </tr>
   </thead>
   <tbody>
+  <%  i=1 %>
   <% Breed.all.each do |breed| %>
   <tr>
-      <th scope="row">1</th>
+      <th scope="row"><%=i %></th>
       <td><%= breed.name %></td>
       <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
-      <td><%= breed.owner.first.name%> </td>
+      <td><%= breed.owners.first.name%> </td>
+      <%i+=1 %>
     </tr>
   <% end %>
   </tbody>
