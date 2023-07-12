@@ -17,7 +17,9 @@ breed_names = breeds_data['message']
 
 # Create breed records in the database
 breed_names.each do |breed_name|
-  breed = Breed.create(name: breed_name)
+  gender = Faker::Creature::Dog.gender
+  size = Faker::Creature::Dog.size
+  breed = Breed.create(name: breed_name, gender: gender, size: size)
 end
 
 
@@ -40,10 +42,11 @@ existing_breeds.each do |breed|
 end
 
 # Create 20 fake owners
-100.times do
+50.times do
+  address =Faker::Address.full_address
   name =Faker::Name.name
-  owner = Owner.create(name: name)
-  4.times do
+  owner = Owner.create(name: name, address: address)
+  2.times do
   breed = existing_breeds.sample
   owner.breeds << breed unless owner.breeds.include?(breed)
   end
