@@ -15,7 +15,7 @@
       <td><%= breed.name %></td>
       <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
       <% if !(breed.owners).nil? %>
-      <td><%= (breed.owners).nil?%></td>
+      <td><%= breed.owners.first.name%></td>
       <%end%>
       <%i+=1 %>
     </tr>
