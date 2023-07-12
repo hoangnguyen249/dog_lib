@@ -9,4 +9,6 @@ class HomeController < ApplicationController
 
   def owner
   end
+  def breed
+  end
 end

@@ -2,11 +2,6 @@ require 'net/http'
 require 'json'
 require 'faker'
 
-# Clear existing data from the breeds, images, and owners tables
-Breed.delete_all
-Owner.delete_all
-Image.delete_all
-
 # Fetch data from the API
 url = URI.parse('https://dog.ceo/api/breeds/list')
 response = Net::HTTP.get(url)

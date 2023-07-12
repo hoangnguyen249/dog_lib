@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'home/about'
   get 'home/owner'
+  get 'home/breed'
 end

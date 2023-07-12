@@ -1,8 +1,10 @@
+<h1>Owner List</h1>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Num</th>
       <th scope="col">Name</th>
+      <th scope="col">Address</th>
       <th scope="col">Breed</th>
     </tr>
   </thead>
@@ -12,7 +14,13 @@
   <tr>
       <th scope="row"><%=i %></th>
       <td><%= owner.name %></td>
-      <td><%= owner.breeds.first.name %></td>
+      <td><%= owner.address %></td>
+      <td>
+  <% owner.breeds.each do |breed| %>
+    <%= breed.name %><br>
+  <% end %>
+</td>
+
       <%i+=1 %>
     </tr>
   <% end %>
