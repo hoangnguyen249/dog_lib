@@ -11,13 +11,9 @@ class HomeController < ApplicationController
   end
   def breed
   end
-  class BreedsController < ApplicationController
-    # Other actions...
-
   def info
-    Breed.find_by(id: params[:id])
+    @breed = Breed.find_by(id: params[:id])
     render 'info'
-  end
   end
 
 end
