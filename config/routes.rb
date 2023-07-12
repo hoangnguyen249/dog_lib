@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/owner'
   get 'home/breed'
+  get 'home/info/:id', to: 'home#info', as: 'info'
+
 end
