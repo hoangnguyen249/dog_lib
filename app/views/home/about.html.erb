@@ -1,4 +1,11 @@
-<p>The data I am planning to use is sourced from the Dog API (https://dog.ceo/dog-api/). This API provides access to a vast collection of dog images and related information.
-The data from the Dog API is structured in a JSON format. The main endpoint of the API provides a list of dog breeds along with their sub-breeds. Each breed or sub-breed has an associated list of image URLs.
+<p>
+The data I intend to use is taken from the Dog API (https://dog.ceo/dog-api/). This API provides access to a large collection of dog images and related information. I also generate fake data using Faker Gem.
+Data from Dog API is structured in JSON format. The main API endpoint provides a list of dog breeds along with their sub-breeds. Each breed or sub-breed has an associated list of image URLs.
 To integrate the different datasets, I will use BreedID to establish a relationship between the "Varieties" and "Images" tables. Each image will be associated with a specific breed through a foreign key relationship. By fetching data from the Dog API and populating the "Breeds" and "Images" tables, I was able to create a comprehensive database of dog breeds and their respective images. This database will allow me to query and retrieve information about specific varieties and display their associated images.
+I also have an "Owner" table that interacts with the "Breed" table through a common information table called "Breeds_Owners".
 </p>
+<hr class="border border-danger border-2 opacity-50">
+<div>
+  <%= image_tag "erd.png", size: '800x500', alt: 'Breed Image' %>
+
+</div>

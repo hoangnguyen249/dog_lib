@@ -14,11 +14,16 @@
   <tr>
       <th scope="row"><%=i %></th>
       <td><%= link_to breed.name.capitalize, info_path(id: breed.id) ,class: "no-underline"%></td>
-      <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
+      <td> <%= image_tag breed.images.first.url, size: '200x200', alt: 'Breed Image' %></td>
       <td>
+ <% if breed.owners.any? %>
   <% breed.owners.each do |owner| %>
     <%= owner.name.capitalize %><br>
   <% end %>
+<% else %>
+  <p>No owners found.</p>
+<% end %>
+
 </td>
 
       <%i+=1 %>
