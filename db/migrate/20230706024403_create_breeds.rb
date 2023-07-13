@@ -5,7 +5,6 @@ class CreateBreeds < ActiveRecord::Migration[7.0]
       t.string :gender
       t.string :size
       t.references :owner, foreign_key: true
-
       t.timestamps
     end
   end

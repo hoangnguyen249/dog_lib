@@ -1,4 +1,4 @@
-
+<%= paginate @breeds %>
 <table class="table">
   <thead>
     <tr>
@@ -10,7 +10,7 @@
   </thead>
   <tbody>
   <%  i=1 %>
-  <% Breed.all.each do |breed| %>
+  <% @breeds.each do |breed| %>
   <tr>
       <th scope="row"><%=i %></th>
       <td><%= link_to breed.name.capitalize, info_path(id: breed.id) ,class: "no-underline"%></td>
@@ -31,5 +31,6 @@
   <% end %>
   </tbody>
 </table>
+
 
 

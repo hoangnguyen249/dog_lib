@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def library
+    @breeds = Breed.all.page(params[:page]).per(20)
   end
   def about
   end
