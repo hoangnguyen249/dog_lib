@@ -14,9 +14,9 @@
   <% Breed.all.each do |breed| %>
   <tr>
       <th scope="row"><%=i %></th>
-      <td><%= breed.name %></td>
-      <td> <%= breed.gender%></td>
-      <td> <%= breed.size %></td>
+      <td><%= breed.name.capitalize %></td>
+      <td> <%= breed.gender.capitalize%></td>
+      <td> <%= breed.size.capitalize %></td>
 </td>
 
       <%i+=1 %>

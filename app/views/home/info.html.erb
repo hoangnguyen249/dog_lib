@@ -1,13 +1,13 @@
 <h1>Breed Information</h1>
-<p>Name: <%= @breed.name %></p>
-<p>Gender: <%= @breed.gender %></p>
-<p>Size: <%= @breed.size %></p>
+<p>Name: <%= @breed.name.capitalize %></p>
+<p>Gender: <%= @breed.gender.capitalize %></p>
+<p>Size: <%= @breed.size.capitalize %></p>
 
 <% if @breed.owners.present? %>
   <p>Owners:</p>
   <ul>
     <% @breed.owners.each do |owner| %>
-      <li><%=link_to owner.name, ownerInfo_path(id: owner.id)  %></li>
+      <li><%=link_to owner.name.capitalize, ownerInfo_path(id: owner.id) , class: "no-underline" %></li>
     <% end %>
   </ul>
 <% else %>

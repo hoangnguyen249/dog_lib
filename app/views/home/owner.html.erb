@@ -13,11 +13,11 @@
   <% Owner.all.each do |owner| %>
   <tr>
       <th scope="row"><%=i %></th>
-      <td><%= owner.name %></td>
-      <td><%= owner.address %></td>
+      <td><%= owner.name.capitalize %></td>
+      <td><%= owner.address.capitalize %></td>
       <td>
   <% owner.breeds.each do |breed| %>
-    <%= breed.name %><br>
+    <%= breed.name.capitalize %><br>
   <% end %>
 </td>
 
