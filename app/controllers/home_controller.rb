@@ -17,10 +17,28 @@ class HomeController < ApplicationController
   end
   def ownerInfo
     @owner = Owner.find_by(id: params[:id])
+    render 'ownerInfo'
   end
   def search
     @query = params[:query]
-    @breeds = Breed.where("name LIKE ?", "%#{@query}%")
+    @size = params[:size]
+
+    if @size.present? && @query.blank?
+      search_by_size
+    else
+      search_by_query
+    end
   end
 
+  private
+
+  def search_by_size
+    @breeds = Breed.where(size: @size)
+    render 'search'
+  end
+
+  def search_by_query
+    @breeds = Breed.where("name LIKE ?", "%#{@query}%")
+    render 'search'
+  end
 end
