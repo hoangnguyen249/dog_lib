@@ -1,5 +1,17 @@
 <h1>Breed Information</h1>
-<p>Name: <%= @breed.name %></p>
-<p>Gender: <%= @breed.gender %></p>
-<p>Size: <%= @breed.size %></p>
-<!-- Add any other breed information you want to display -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Size</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td> <%= @breed.name %></td>
+      <td> <%= @breed.gender %></td>
+      <td> <%= @breed.size %></td>
+    </tr>
+  </tbody>
+</table>
