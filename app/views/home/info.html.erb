@@ -1,17 +1,16 @@
 <h1>Breed Information</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Size</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <td> <%= @breed.name %></td>
-      <td> <%= @breed.gender %></td>
-      <td> <%= @breed.size %></td>
-    </tr>
-  </tbody>
-</table>
+<p>Name: <%= @breed.name %></p>
+<p>Gender: <%= @breed.gender %></p>
+<p>Size: <%= @breed.size %></p>
+
+<% if @breed.owners.present? %>
+  <p>Owners:</p>
+  <ul>
+    <% @breed.owners.each do |owner| %>
+      <li><%=link_to owner.name, ownerInfo_path(id: owner.id)  %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No owners found.</p>
+<% end %>
+

@@ -1,0 +1,15 @@
+<h1>Breed Information</h1>
+<p>Name: <%= @owner.name %></p>
+<p>Address: <%= @owner.address %></p>
+
+<% if @owner.breeds.present? %>
+  <p>Breeds:</p>
+  <ul>
+    <% @owner.breeds.each do |breed| %>
+      <li><%=link_to breed.name, info_path(id: breed.id) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No breeds found.</p>
+<% end %>
+

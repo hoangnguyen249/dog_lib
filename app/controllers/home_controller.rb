@@ -15,5 +15,8 @@ class HomeController < ApplicationController
     @breed = Breed.find_by(id: params[:id])
     render 'info'
   end
+  def ownerInfo
+    @owner = Owner.find_by(id: params[:id])
+  end
 
 end
