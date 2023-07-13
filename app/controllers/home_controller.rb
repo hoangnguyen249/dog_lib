@@ -18,5 +18,9 @@ class HomeController < ApplicationController
   def ownerInfo
     @owner = Owner.find_by(id: params[:id])
   end
+  def search
+    @query = params[:query]
+    @breeds = Breed.where("name ILIKE ?", "%#{@query}%")
+  end
 
 end
