@@ -13,7 +13,6 @@
   <% Breed.all.each do |breed| %>
   <tr>
       <th scope="row"><%=i %></th>
-      <td><%= breed.id %></td>
       <td><%= link_to breed.name, info_path(id: breed.id) %></td>
       <td> <%= image_tag breed.images.first.url, size: '200x200' %></td>
       <td>
