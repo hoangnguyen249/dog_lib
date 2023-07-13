@@ -23,7 +23,9 @@ class HomeController < ApplicationController
     @query = params[:query]
     @size = params[:size]
 
-    if @size.present? && @query.blank?
+    if @size.present? && @query.present?
+      search_all
+    elsif @size.present? && @query.blank?
       search_by_size
     else
       search_by_query
@@ -32,6 +34,10 @@ class HomeController < ApplicationController
 
   private
 
+  def search_all
+    @breeds = Breed.where(size: @size).where("name LIKE ?", "%#{@query}%")
+    render 'search'
+  end
   def search_by_size
     @breeds = Breed.where(size: @size)
     render 'search'
