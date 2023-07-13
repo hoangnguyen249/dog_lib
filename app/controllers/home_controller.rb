@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
   def search
     @query = params[:query]
-    @breeds = Breed.where("name ILIKE ?", "%#{@query}%")
+    @breeds = Breed.where("name LIKE ?", "%#{@query}%")
   end
 
 end

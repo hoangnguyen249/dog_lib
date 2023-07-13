@@ -3,10 +3,7 @@
 <% if @breeds.present? %>
   <ul>
     <% @breeds.each do |breed| %>
-      <li><%= breed.name %></li>
-      <li><%= breed.gender %></li>
-      <li><%= breed.size %></li>
-      <!-- Display other breed information as needed -->
+      <td><%= link_to breed.name.capitalize, info_path(id: breed.id) ,class: "no-underline"%></td>
       <br>
     <% end %>
   </ul>
